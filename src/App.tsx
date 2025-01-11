@@ -10,7 +10,7 @@ import Appointments from './pages/Appointments';
 import Treatments from './pages/Treatments';
 import Settings from './pages/Settings';
 import Billing from './pages/Billing';
-import Message from './pages/Message';
+import Inventory from './pages/Inventory';
 import Notification from './pages/Notification';
 import Report from './pages/Report';
 
@@ -58,7 +58,7 @@ function App() {
             <Route path="appointments" element={<Appointments />} />
             <Route path="treatments" element={<Treatments />} />
             <Route path="billing" element={<Billing />} />
-            <Route path="message" element={<Message />} />
+            <Route path="inventory" element={<Inventory />} />
             <Route path="notification" element={<Notification />} />
             <Route path="report" element={<Report />} />
             <Route path="settings" element={<Settings />} />

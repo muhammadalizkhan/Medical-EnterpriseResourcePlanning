@@ -38,7 +38,7 @@ const menuItems = [
   { text: 'Appointments', icon: <Calendar />, path: '/appointments' },
   { text: 'Treatments', icon: <ClipboardList />, path: '/treatments' },
   { text: 'Billing', icon: <Receipt />, path: '/billing' },
-  { text: 'Messages', icon: <MessageSquare />, path: '/Message' },
+  { text: 'Inventory', icon: <MessageSquare />, path: '/Inventory' },
   { text: 'Reports', icon: <FileText />, path: '/Report' },
   { text: 'Notifications', icon: <Bell />, path: '/Notification' },
   { text: 'Settings', icon: <Settings />, path: '/Settings' },
