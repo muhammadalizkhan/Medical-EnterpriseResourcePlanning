@@ -52,14 +52,12 @@ const Notification = () => {
     },
   ];
 
-  // Handle filter changes
   const handleFilterChange = (field, value) => {
     setFilters((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
     <Box p={3}>
-      {/* Header Section */}
       <Box
         display="flex"
         justifyContent="space-between"
@@ -97,7 +95,6 @@ const Notification = () => {
         </Stack>
       </Box>
 
-      {/* Search and Filters */}
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
         <TextField
           variant="outlined"
@@ -122,7 +119,6 @@ const Notification = () => {
         </Button>
       </Box>
 
-      {/* Table Section */}
       <TableContainer component={Paper} elevation={3} sx={{ borderRadius: "8px" }}>
         <Table>
           <TableHead>
@@ -206,7 +202,6 @@ const Notification = () => {
         </Table>
       </TableContainer>
 
-      {/* Filter Modal */}
       <Modal open={filterModalOpen} onClose={() => setFilterModalOpen(false)}>
         <Box
           p={4}
@@ -251,7 +246,6 @@ const Notification = () => {
         </Box>
       </Modal>
 
-      {/* Order Stock Modal */}
       <Modal open={orderModalOpen} onClose={() => setOrderModalOpen(false)}>
         <Box
           p={4}
