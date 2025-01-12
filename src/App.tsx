@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import Layout from './components/Layout';
@@ -13,6 +12,7 @@ import Billing from './pages/Billing';
 import Inventory from './pages/Inventory';
 import Notification from './pages/Notification';
 import Report from './pages/Report';
+import AdvancedFeatures from './pages/AdvancedFeatures';
 
 const theme = createTheme({
   palette: {
@@ -58,6 +58,7 @@ function App() {
             <Route path="appointments" element={<Appointments />} />
             <Route path="treatments" element={<Treatments />} />
             <Route path="billing" element={<Billing />} />
+            <Route path="advanced-features" element={<AdvancedFeatures />} />
             <Route path="inventory" element={<Inventory />} />
             <Route path="notification" element={<Notification />} />
             <Route path="report" element={<Report />} />
