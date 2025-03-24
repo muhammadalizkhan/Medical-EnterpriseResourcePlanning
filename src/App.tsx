@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Doctors from './pages/Doctors';
+import DocotorProfile from './pages/DocotorProfile';
 import Patients from './pages/Patients';
 import Staff from './pages/Staff';
 import Appointments from './pages/Appointments';
@@ -53,6 +54,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="doctors" element={<Doctors />} />
+            <Route path="doctor-profile" element={<DocotorProfile />} />
             <Route path="patients" element={<Patients />} />
             <Route path="staff" element={<Staff />} />
             <Route path="appointments" element={<Appointments />} />

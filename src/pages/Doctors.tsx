@@ -24,6 +24,8 @@ import {
 } from '@mui/material';
 import { Plus, Edit2, Trash2, Star } from 'lucide-react';
 import type { Doctor } from '../types';
+import { useNavigate } from 'react-router-dom';
+
 
 const mockDoctors: Doctor[] = [
   {
@@ -200,6 +202,7 @@ const Doctors = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | undefined>();
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
+  const navigate = useNavigate();
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -214,6 +217,10 @@ const Doctors = () => {
     setModalMode('add');
     setSelectedDoctor(undefined);
     setModalOpen(true);
+  };
+
+  const handleNavigateToProfile = (id: string) => {
+    navigate(`/doctor-profile?id=${id}`);
   };
 
   const handleEditDoctor = (doctor: Doctor) => {
@@ -259,6 +266,8 @@ const Doctors = () => {
                         src={doctor.profilePicture}
                         alt={doctor.name}
                         sx={{ width: 40, height: 40 }}
+                        onClick={() => handleNavigateToProfile(doctor.id)}
+
                       />
                       <Box>
                         <Typography variant="subtitle2">{doctor.name}</Typography>

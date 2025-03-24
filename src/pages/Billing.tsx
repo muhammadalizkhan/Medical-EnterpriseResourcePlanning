@@ -2,22 +2,21 @@ import {
   Box,
   Typography,
   Card,
-  Divider,
-  Grid,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
+  Grid,
   Paper,
   Button,
-  CircularProgress,
   TextField,
   IconButton,
 } from "@mui/material";
 import { useState } from "react";
 import { Edit, Trash } from "lucide-react";
+import { To, useNavigate } from "react-router-dom";
 
 export default function Billing() {
   const [invoices, setInvoices] = useState([
@@ -26,13 +25,18 @@ export default function Billing() {
     { id: 3, patientName: "Alice Brown", amount: "$200", status: "Paid", date: "20-06-2023" },
   ]);
 
-  const handleDelete = (id) => {
+  const navigate = useNavigate();
+
+  const handleDelete = (id: number) => {
     setInvoices(invoices.filter((invoice) => invoice.id !== id));
   };
 
-  const handleEdit = (id) => {
-    // Logic to edit an invoice (e.g., open a modal)
+  const handleEdit = (id: number) => {
     console.log("Edit invoice", id);
+  };
+
+  const handleNavigate = (path: To) => {
+    navigate(path);
   };
 
   return (
@@ -40,8 +44,6 @@ export default function Billing() {
       <Typography variant="h5" fontWeight="bold" sx={{ mb: 4, color: "#1A202C" }}>
         Billing Section
       </Typography>
-
-      {/* Invoice Summary */}
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
           <Card sx={{ p: 3, borderRadius: "16px", backgroundColor: "#FFFFFF", boxShadow: "0px 4px 12px rgba(0,0,0,0.1)" }}>
@@ -85,8 +87,6 @@ export default function Billing() {
           </Card>
         </Grid>
       </Grid>
-
-      {/* Invoice Table */}
       <Box sx={{ mt: 4 }}>
         <Typography variant="h6" fontWeight="bold" sx={{ mb: 2, color: "#1A202C" }}>
           Invoice Details
@@ -139,8 +139,6 @@ export default function Billing() {
           </Table>
         </TableContainer>
       </Box>
-
-      {/* Add Invoice Section */}
       <Box sx={{ mt: 4 }}>
         <Typography variant="h6" fontWeight="bold" sx={{ mb: 2, color: "#1A202C" }}>
           Add New Invoice
@@ -180,15 +178,14 @@ export default function Billing() {
           </Grid>
         </Grid>
       </Box>
-
-      {/* Advanced Features Section */}
       <Box sx={{ mt: 4 }}>
         <Typography variant="h6" fontWeight="bold" sx={{ mb: 2, color: "#1A202C" }}>
           Advanced Features
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
-            <Card sx={{ p: 3, borderRadius: "16px", backgroundColor: "#EDF2F7", boxShadow: "0px 4px 12px rgba(0,0,0,0.1)" }}>
+            <Card sx={{ p: 3, transition: "transform 0.3s",
+              "&:hover": { transform: "scale(1.05)" }, borderRadius: "16px", backgroundColor: "#EDF2F7", boxShadow: "0px 4px 12px rgba(0,0,0,0.1)" }}>
               <Typography variant="h6" fontWeight="bold" sx={{ color: "#1A202C" }}>
                 Revenue Reports
               </Typography>
@@ -197,6 +194,7 @@ export default function Billing() {
               </Typography>
               <Button
                 variant="outlined"
+                onClick={() => handleNavigate("/advanced-features")}
                 sx={{
                   mt: 2,
                   borderColor: "#3182CE",
@@ -211,7 +209,8 @@ export default function Billing() {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Card sx={{ p: 3, borderRadius: "16px", backgroundColor: "#EDF2F7", boxShadow: "0px 4px 12px rgba(0,0,0,0.1)" }}>
+            <Card sx={{ p: 3, transition: "transform 0.3s",
+              "&:hover": { transform: "scale(1.05)" }, borderRadius: "16px", backgroundColor: "#EDF2F7", boxShadow: "0px 4px 12px rgba(0,0,0,0.1)" }}>
               <Typography variant="h6" fontWeight="bold" sx={{ color: "#1A202C" }}>
                 Expense Tracking
               </Typography>
@@ -220,6 +219,7 @@ export default function Billing() {
               </Typography>
               <Button
                 variant="outlined"
+                onClick={() => handleNavigate("/advanced-features")}
                 sx={{
                   mt: 2,
                   borderColor: "#3182CE",
@@ -234,7 +234,8 @@ export default function Billing() {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Card sx={{ p: 3, borderRadius: "16px", backgroundColor: "#EDF2F7", boxShadow: "0px 4px 12px rgba(0,0,0,0.1)" }}>
+            <Card sx={{ p: 3, transition: "transform 0.3s",
+              "&:hover": { transform: "scale(1.05)" }, borderRadius: "16px", backgroundColor: "#EDF2F7", boxShadow: "0px 4px 12px rgba(0,0,0,0.1)" }}>
               <Typography variant="h6" fontWeight="bold" sx={{ color: "#1A202C" }}>
                 Insurance Billing
               </Typography>
@@ -243,6 +244,7 @@ export default function Billing() {
               </Typography>
               <Button
                 variant="outlined"
+                onClick={() => handleNavigate("/advanced-features")}
                 sx={{
                   mt: 2,
                   borderColor: "#3182CE",
